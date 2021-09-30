@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 
 
 @RestController
@@ -40,8 +41,8 @@ public class OdontologoController {
         return ResponseEntity.ok("El odontólogo ha sido eliminado");
     }
 
-    @GetMapping("/list")
-    public ResponseEntity<?> buscarTodos(){
+    @GetMapping
+    public ResponseEntity<Collection<OdontologoDTO>> buscarTodos(){
         return ResponseEntity.ok(iOdontologoService.buscarTodos());
     }
 }

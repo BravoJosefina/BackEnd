@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 
@@ -46,8 +47,8 @@ public class PacienteController {
         return ResponseEntity.ok("El paciente ha sido eliminado");
     }
 
-    @GetMapping("/list")
-    public ResponseEntity<?> buscarTodos(){
+    @GetMapping
+    public ResponseEntity<Collection<PacienteDTO>> buscarTodos(){
         return ResponseEntity.ok(iPacienteService.buscarTodos());
     }
 }
